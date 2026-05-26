@@ -9,11 +9,12 @@
 
 <body>
 
-    <header>Your Featured Deals</header>
-    <div class="wrapper">
-        <div class="grid-container" id="cards">
+    <header>Featured Deals</header>
 
-            <article class="card" data-slider>
+        <div class="wrapper">
+            <div class ="grid-container" id = "cards">
+
+                <article class="card" data-slider>
                 <div class="media">
                     <div class="track">
                         <div class="slide"><img src="img/House 1.webp" alt="house"></div>
@@ -26,9 +27,9 @@
                         <button class="menu-btn" aria-label="More options">⋯</button>
 
                                 <div class="menu">
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                    <a href="#">Share</a>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                    <a href="#" class="share">Share</a>
                                 </div>
 
                     </div>
@@ -64,7 +65,7 @@
                             <p class="beds"><ion-icon name="bed-outline"></ion-icon><br/>3 beds</p>
                         </div>
                         
-                        <div class="baths">
+                     <div class="baths">
                             <p class="bathrooms"></p>
                         
                         </div>
@@ -77,9 +78,9 @@
                 </div>
 
 
-            </article>
+                </article>
 
-            <article class="card" data-slider>
+                <article class="card" data-slider>
                 <div class="media">
                     <div class="track">
                         <div class="slide"><img src="img/house 2.webp" alt="house"></div>
@@ -92,9 +93,9 @@
                             <button class="menu-btn" aria-label="More options">⋯</button>
 
                                 <div class="menu">
-                                    <a href="#">Edit</a>
-                                    <a href="#">Delete</a>
-                                    <a href="#">Share</a>
+                                    <a href="#" class="edit">Edit</a>
+                                    <a href="#" class="delete">Delete</a>
+                                    <a href="#" class="share">Share</a>
                                 </div>
 
                         </div>
@@ -128,6 +129,11 @@
                         <div class="beds">
                             <p class="beds"><ion-icon name="bed-outline"></ion-icon><br/>3 beds</p>
                         </div>
+
+                         <div class="baths">
+                            <p class="bathrooms"><ion-icon name="water-outline"></ion-icon><br/>2 baths</p>
+                        
+                        </div>
                         
                         <div class="squaremeters">
                             <p class="meta">120 <br/> sqm</p>
@@ -135,9 +141,9 @@
                     </div>
 
                 </div>
-            </article>
+                </article>
 
-            <article class="card" data-slider>
+                <article class="card" data-slider>
                 <div class="media">
                     <div class="track">
                         <div class="slide"><img src="img/house 3.webp" alt="house"></div>
@@ -149,9 +155,9 @@
                         <button class="menu-btn" aria-label="More options">⋯</button>
 
                             <div class="menu">
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                                <a href="#">Share</a>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Delete</a>
+                                <a href="#" class="share">Share</a>
                             </div>
 
                     </div>
@@ -185,6 +191,11 @@
                         <div class="beds">
                             <p class="beds"><ion-icon name="bed-outline"></ion-icon><br/>3 beds</p>
                         </div>
+
+                        <div class="baths">
+                            <p class="bathrooms"><ion-icon name="water-outline"></ion-icon><br/>2 baths</p>
+                        
+                        </div>
                         
                         <div class="squaremeters">
                             <p class="meta">120 <br/> sqm</p>
@@ -192,68 +203,95 @@
                     </div>
 
                  </div>    
-            </article>
-
+                </article>  
+            </div>        
+        
             <div class="add">
-                <p class="">Add New Deals <br/>
-                    <button id="openModal">Add New</button>
-                    
-                        <div class="modal" id="modal">
-                            <div class="modal-inner"> 
+        <p class="">Add New Deals <br/>
+            <button id="openModal" aria-label="Add new listing">Create</button>
+        </p>   
+            </div>      
+
+            <div class="modal" id="modal">
+                <div class="modal-inner">         
+                                
+                    <div class="entryArea">
+
+                        <div class="modal-inner">
+
+                            <div class="modal-header">
+                                                <h2>Add Listing</h2>
+                                                <button type="button" class="icon-close" id="closeModal" aria-label="Close">✕</button>
+                            </div>
+                                        
+                            <div class="modal-content">
 
                                 <div class="photoBox">
-                                    <Button class="addPhoto">Add Photos</Button>
+                                    <button type="button" class="addPhoto">+ Add photos</button>
+
+                                    <p class="hint">JPG/PNG, up to 3 images</p>
+
+                                    <input type="file" id="photoInput" accept="image/png, image/jpeg" multiple hidden />
+
+                                    <div id="photoPreview" class="photo-preview"></div>
                                 </div>
 
-                                <div class="entryArea">
+                                <form class="entryArea">
 
-                                        <div class="field">
-                                            <div class="labelline">Deal name</div>
-                                            <input id="myDeals" required>
-                                        </div>
+                                    <div class="field">
+                                        <label for="myDeals">Deal name</label>
+                                        <input id="myDeals" placeholder="e.g. Balay ni Mayang" required />
+                                    </div>
+                                   
+                                    <div class="field">
+                                        <label for="myLocation">Location</label>
+                                        <input id="myLocation" placeholder="e.g. Dumaguete City" required />
+                                    </div>
 
-                                        <div class="field">
-                                            <div class="labelline">Location</div>
-                                            <input id="myLocation" required>
-                                        </div>
+                                    <div class="field">
+                                        <label for="myPrice">Price</label>
+                                        <input id="myPrice" placeholder="e.g. 3500000" inputmode="numeric" required />
+                                    </div>
 
-                                        <div class="field">
-                                            <div class="labelline">Price</div>
-                                            <input id="myPrice" required>
-                                        </div>
+                                    <div class="field">
+                                        <label for="myBeds">Bedrooms</label>
+                                        <input id="myBeds" placeholder="e.g. 3" inputmode="numeric" required />
+                                    </div>
 
-                                        <div class="field">
-                                            <div class="labelline">Number of Bedrooms</div>
-                                            <input id="myBeds" required>
-                                        </div>
+                                    <div class="field">
+                                        <label for="myBaths">Bathrooms</label>
+                                        <input id="myBaths" placeholder="e.g. 2" inputmode="numeric" required />
+                                    </div>
 
-                                        <div class="field">
-                                            <div class="labelline">Number of Bathrooms</div>
-                                            <input id="myBaths" required>
-                                        </div>
-                                        
-                                        <div class="field">    
-                                            <div class="labelline">Property square meters</div>
-                                            <input id="mySqm" required>
-                                        </div>
-                                </div>  
+                                    <div class="field">
+                                        <label for="mySqm">Square meters</label>
+                                        <input id="mySqm" placeholder="e.g. 120" inputmode="numeric" required />
+                                    </div>
 
-                                <div class="interactBtn">
-                                    <button id="addModal" type ="button">Add</button>
-                                    <button id="closeModal">Cancel</button>
-                                </div>
+                                </form>
+
                             </div>
-                        </div>    
-                </p>
-            </div>
-            
-        </div>
 
-    </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn ghost" id="closeModal2">Cancel</button>
+                                <button type="button" class="btn primary" id="addModal">Add listing</button>
+                            </div>
+
+                        </div>
+
+                    </div>  
+                </div>
+            </div>
+
+            <div class="viewer" id="viewer">
+                <button type="button" class="icon-close" id="closeImageViewer" aria-label="Close image viewer">✕</button>
+                <img id="viewerImage" alt="Preview large" />
+            </div>        
+        </div>
     <section></section>
     <footer></footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="html.js"></script>
+    <script src="app.js"></script>
 </body>
 
 
